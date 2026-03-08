@@ -120,7 +120,7 @@
 <script setup>
 import axios from 'axios'
 import { computed, ref, onMounted } from 'vue'
-
+import request from '@/utils/request'
 /**
  * 接口返回示例：
  * [
@@ -233,7 +233,8 @@ async function loadQuestions() {
   errorMessage.value = ''
 
   try {
-    const res = await axios.get('/server_api/v1/querybillInfoweb')
+    const res =request.get('/v1/querybillInfoweb')
+
 
     // 兼容几种常见返回结构
     const rawList =
