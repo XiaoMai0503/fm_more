@@ -3,12 +3,12 @@ module.exports = {
 
   devServer: {
     proxy: {
-      '/api': {
-        target: 'https://dianwei.zeblog.cc',
+      '/server_api': {
+        target: 'https://dianwei.zeblog.cc/server_api',
         changeOrigin: true,
         secure: false,
         pathRewrite: {
-          '^/api': ''
+          '^/server_api': ''
         }
       }
     }

@@ -233,9 +233,7 @@ async function loadQuestions() {
   errorMessage.value = ''
 
   try {
-    const res =request.get('/v1/querybillInfoweb')
-
-
+    const res = await axios.get('/server_api/v1/querybillInfoweb')
     // 兼容几种常见返回结构
     const rawList =
       res?.data?.data ||
